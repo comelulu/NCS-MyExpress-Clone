@@ -24,13 +24,6 @@ const MyExpress = (function () {
     return types[ext] || "application/octet-stream";
   }
 
-  // 수정 요망
-  // function safePath(root, requestPath) {
-  //   const resolved = path.resolve(root, "." + requestPath);
-  //   return resolved.startsWith(path.resolve(root)) ? resolved : null;
-  // }
-
-  // https://chatgpt.com/c/68546240-53b4-8002-a0d3-2f963668c73c
   function safePath(root, requestPath) {
     // 슬래시(/)로 시작하는 경로를 제거하여 상대 경로로 만듦
     const relative = requestPath.replace(/^\/+/, "");
